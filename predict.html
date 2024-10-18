@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict Vehicle Damage</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <style>
+        /* Reset some default styles to ensure consistent rendering */
+body, h1, form, label, input, button, p, span {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+section {
+    margin: 20px auto;
+    max-width: 400px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Style the button on hover */
+button:hover {
+    background-color: #555;
+}
+
+/* Display the result div */
+#result {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Style the predicted cost */
+#predictedCost {
+    font-size: 18px;
+    color: #0066cc;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Predict Vehicle Damage</h1>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <form class="forms"  method="post">
+                    <button style="background-color: #ff004f;" class="button"  href="/logout">
+                        Logout
+                    </button>
+                    
+                </form>
+                <!-- <li><a href="register.html">Register</a></li> -->
+                <!-- <li><a href="/prediction">Predict</a></li> -->
+                
+            </ul>
+        </nav>
+    </header>
+    <section>
+        
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <label for="file">Upload Vehicle Image:</label>
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Predict</button>
+            <h5>{{prediction}}</h5>
+        </form>
+    </section>
+
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const predictionForm = document.getElementById("predictionForm");
+    const predictButton = document.getElementById("predictButton");
+    const result = document.getElementById("result");
+    const predictedCost = document.getElementById("predictedCost");
+
+    predictButton.addEventListener("click", function () {
+        const fileInput = document.getElementById("file");
+        const selectedFile = fileInput.files[0];
+
+        if (!selectedFile) {
+            alert("Please select a file.");
+            return;
+        }
+
+        // Simulate damage cost prediction (simplified example).
+        const mockPredictedCost = Math.floor(Math.random() * 5000); // Random prediction for demonstration.
+        
+        // Display the predicted cost to the user.
+        predictedCost.textContent = mockPredictedCost;
+        result.style.display = "block";
+    });
+});
+
+    </script> -->
+</body>
+</html>
